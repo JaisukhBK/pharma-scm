@@ -1,27 +1,14 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/**/*.js", "use": "@vercel/node" },
     { "src": "index.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/api/ai-chat", "dest": "/api/ai-chat.js" },
-    { "src": "/api/auth", "dest": "/api/auth.js" },
-    { "src": "/api/dashboard", "dest": "/api/dashboard.js" },
-    { "src": "/api/warehouses", "dest": "/api/warehouses.js" },
-    { "src": "/api/inventory", "dest": "/api/inventory.js" },
-    { "src": "/api/shipments", "dest": "/api/shipments.js" },
-    { "src": "/api/orders", "dest": "/api/orders.js" },
-    { "src": "/api/carriers", "dest": "/api/carriers.js" },
-    { "src": "/api/analytics", "dest": "/api/analytics.js" },
-    { "src": "/api/forecast", "dest": "/api/forecast.js" },
-    { "src": "/api/reorders", "dest": "/api/reorders.js" },
-    { "src": "/api/tracking", "dest": "/api/tracking.js" },
     { "src": "/(.*)", "dest": "/index.js" }
   ],
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET,POST,PUT,PATCH,DELETE,OPTIONS" },
